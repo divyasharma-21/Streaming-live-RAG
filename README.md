@@ -4,26 +4,7 @@ An event-driven retrieval-augmented generation engine that listens to a live tra
 retrieves early, decomposes multi-intent requests, refines answers when late constraints
 arrive, and grounds every claim in a `[Doc_ID §Section]` citation.
 The problem statement is the Theme 4 guide (transcribed into `data/corpus/Doc_01.md`).
-The build plan is `docs/agent_playbook.md`.
 
-> **Status: all five phases complete (Phase 5: telemetry, benchmarking & packaging).**
-> The only remaining environment-dependent task is the final Docker verification: `docker compose up` on a
-> machine with Docker and enough RAM for a 7-8B model. That run verifies gate G1 and the intended 7-8B
-> runtime together. See `reports/FINAL_CHECKLIST.md`.
->
-> | Gate | Target | Dev-set result (offline profile) |
-> |---|---|---|
-> | G1 reproducibility | one command, container, clean machine | one-command CLI runner verified on a fresh clone; **container not run (requires Docker)** |
-> | G2 early retrieval | >= 80% | 0.971 |
-> | G3 multi-intent | >= 70% | 0.75 |
-> | G4 grounding | >= 85% support, 0 fabricated | 1.0, 0 fabricated (extractive claims) |
-> | G5 session refinement | state continuity | 5/5 |
-> | G6 telemetry | 100% trace coverage | 80/80 |
->
-> Deliverables:
-> * `reports/ARCHITECTURE_BRIEF.md`, `reports/BENCHMARK.md` and `reports/DEMO_SCRIPT.md` (the video still has to be recorded);
-> * `docs/TELEMETRY.md` + `schemas/`;
-> * per-phase reports and ablations in `reports/`.
 
 ## Quick start
 
