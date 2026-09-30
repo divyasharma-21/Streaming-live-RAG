@@ -27,12 +27,12 @@ The build plan is `docs/agent_playbook.md`.
 
 ## Quick start
 
-Requires Python 3.11. **One command** from a fresh clone (creates `.venv`, installs pinned
-dependencies, runs the tests, builds the indexes and runs the full replay with gates G1-G6):
-
 ```bash
-bash scripts/run_all.sh          # or: make all
-cat results/replay/summary.md    # G1-G6 + streaming-vs-baseline table
+git clone https://github.com/divyasharma-21/Streaming-live-RAG && cd Streaming-live-RAG && \
+uv venv --python 3.11 && \
+uv pip install -r requirements-dev.txt && \
+.venv/bin/python -m src.corpus.build_index && \
+.venv/bin/python eval/replay.py --out results/replay
 ```
 
 ### Runtime profiles
@@ -174,7 +174,7 @@ no downloads:
 | `PRISM_CACHE_SIMILARITY` | 0.75 | 0 disables the speculative cache |
 | `PRISM_GROUNDING_JUDGE` / `PRISM_GROUNDING_MODE` / `PRISM_LEXICAL_SUPPORT_THRESHOLD` | `lexical` / `drop` / 0.8 | `nli` (optional model), `llm` (needs an LLM); `flag` keeps failures but reports them |
 
-## Final verification on suitable hardware (teammate)
+## Final verification on suitable hardware
 
 Everything that does not need Docker or a 7-8B model is implemented and verified: see
 `reports/FINAL_CHECKLIST.md` for what was verified locally, what was verified with the test-only fake
