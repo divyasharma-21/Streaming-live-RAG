@@ -1,0 +1,84 @@
+{
+  "$defs": {
+    "RetrievalEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "timestamp_s": {
+          "minimum": 0,
+          "title": "Timestamp S",
+          "type": "number"
+        },
+        "query": {
+          "title": "Query",
+          "type": "string"
+        },
+        "trigger": {
+          "enum": [
+            "provisional",
+            "multi_intent",
+            "final"
+          ],
+          "title": "Trigger",
+          "type": "string"
+        }
+      },
+      "required": [
+        "timestamp_s",
+        "query",
+        "trigger"
+      ],
+      "title": "RetrievalEvent",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Final per-request record, matching the problem statement example.",
+  "properties": {
+    "retrieval_events": {
+      "items": {
+        "$ref": "#/$defs/RetrievalEvent"
+      },
+      "title": "Retrieval Events",
+      "type": "array"
+    },
+    "sub_queries": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Sub Queries",
+      "type": "array"
+    },
+    "answer": {
+      "title": "Answer",
+      "type": "string"
+    },
+    "citations": {
+      "items": {
+        "pattern": "^[A-Za-z0-9_\\-]+ §[0-9A-Za-z]+(\\.[0-9A-Za-z]+)*$",
+        "type": "string"
+      },
+      "title": "Citations",
+      "type": "array"
+    },
+    "uncertainty": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Uncertainty"
+    }
+  },
+  "required": [
+    "retrieval_events",
+    "sub_queries",
+    "answer",
+    "citations"
+  ],
+  "title": "OutputRecord",
+  "type": "object"
+}

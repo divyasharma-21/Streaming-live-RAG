@@ -1,0 +1,57 @@
+# CONFIGURATION ONLY in this repository's build environment: never run there (no Docker daemon).
+#
+# Intended runtime (agent playbook): a local Ollama server with a 7-8B-class instruct model.
+#   docker compose up            # ollama -> pull the model -> full replay suite -> results/replay/
+# Offline CPU-only profile (no model): docker compose -f docker-compose.offline.yml up
+#
+# Hardware: a 7-8B model quantised to 4 bits typically needs several GB of free RAM for Ollama in
+# addition to the ~0.1 GB the application uses; confirm on the target machine. The model tag is
+# configuration (PRISM_LLM_MODEL); `llama3.1:8b` is only the default and must be confirmed by the
+# infrastructure owner. The replay records the served model's reported parameter size.
+services:
+  ollama:
+    image: ollama/ollama            # pin a tag once verified
+    volumes:
+      - ollama_models:/root/.ollama
+    ports:
+      - "11434:11434"
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  ollama-pull:                      # one-shot: make sure the configured model is present
+    image: ollama/ollama
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+      PRISM_LLM_MODEL: ${PRISM_LLM_MODEL:-llama3.1:8b}
+    entrypoint: ["/bin/sh", "-c", "ollama pull \"$$PRISM_LLM_MODEL\""]
+    volumes:
+      - ollama_models:/root/.ollama
+
+  prism:
+    build: .
+    depends_on:
+      ollama-pull:
+        condition: service_completed_successfully
+    environment:
+      PRISM_LLM_PROVIDER: ${PRISM_LLM_PROVIDER:-ollama}
+      PRISM_LLM_MODEL: ${PRISM_LLM_MODEL:-llama3.1:8b}
+      PRISM_LLM_BASE_URL: ${PRISM_LLM_BASE_URL:-http://ollama:11434}
+      PRISM_LLM_TIMEOUT_S: ${PRISM_LLM_TIMEOUT_S:-300}
+      PRISM_LLM_NUM_CTX: ${PRISM_LLM_NUM_CTX:-4096}
+      PRISM_DECOMPOSER: ${PRISM_DECOMPOSER:-llm}
+      PRISM_GROUNDING_JUDGE: ${PRISM_GROUNDING_JUDGE:-llm}
+      PRISM_DENSE_BACKEND: ${PRISM_DENSE_BACKEND:-hashing}
+      PRISM_RERANK_BACKEND: ${PRISM_RERANK_BACKEND:-lexical}
+    volumes:
+      - ./results:/app/results
+      - ./logs:/app/logs
+    mem_limit: 3g
+
+volumes:
+  ollama_models:

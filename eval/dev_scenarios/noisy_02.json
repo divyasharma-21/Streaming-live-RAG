@@ -1,0 +1,48 @@
+{
+  "id": "noisy_02",
+  "category": "noisy_fragment",
+  "review_status": "draft_pending_human_review",
+  "description": "Self-correction mid-utterance.",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "I need, wait, no,",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "what does the delta engine... the answer delta thing",
+          "is_final": false
+        },
+        {
+          "ts": 1.6,
+          "text": "mutate when constraints arrive?",
+          "is_final": false
+        },
+        {
+          "ts": 2.1,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "answer delta engine behaviour",
+          "supporting": [
+            "Doc_01 §7"
+          ],
+          "also_relevant": [
+            "Doc_01 §2.1",
+            "Doc_01 §4.2"
+          ]
+        }
+      ],
+      "expect_uncertainty": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+# CONFIGURATION ONLY (not run in the build environment). Offline CPU-only profile: no LLM,
+# extractive answers, rule decomposer, lexical grounding judge.
+#   docker compose -f docker-compose.offline.yml up
+services:
+  prism:
+    build: .
+    environment:
+      PRISM_LLM_PROVIDER: none
+      PRISM_DECOMPOSER: rules
+      PRISM_GROUNDING_JUDGE: lexical
+    volumes:
+      - ./results:/app/results
+      - ./logs:/app/logs
+    mem_limit: 3g

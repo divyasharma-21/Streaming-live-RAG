@@ -1,0 +1,27 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "ts": {
+      "description": "Seconds since the start of the utterance.",
+      "minimum": 0,
+      "title": "Ts",
+      "type": "number"
+    },
+    "text": {
+      "title": "Text",
+      "type": "string"
+    },
+    "is_final": {
+      "default": false,
+      "description": "True for the last chunk of an utterance.",
+      "title": "Is Final",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "ts",
+    "text"
+  ],
+  "title": "TranscriptChunk",
+  "type": "object"
+}

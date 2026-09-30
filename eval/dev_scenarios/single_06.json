@@ -1,0 +1,40 @@
+{
+  "id": "single_06",
+  "category": "single_intent",
+  "review_status": "draft_pending_human_review",
+  "description": "One question about one roadmap phase.",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "What happens in phase three",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "of the implementation roadmap?",
+          "is_final": false
+        },
+        {
+          "ts": 1.3,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "roadmap phase 3 work items",
+          "supporting": [
+            "Doc_01 §7"
+          ],
+          "also_relevant": []
+        }
+      ],
+      "expect_uncertainty": false
+    }
+  ]
+}

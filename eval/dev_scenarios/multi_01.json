@@ -1,0 +1,53 @@
+{
+  "id": "multi_01",
+  "category": "multi_intent",
+  "review_status": "draft_pending_human_review",
+  "description": "Two gates asked in one utterance (same section, distinct intents).",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "I'd like to know the target",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "for early retrieval, and also how",
+          "is_final": false
+        },
+        {
+          "ts": 1.6,
+          "text": "multi-intent identification is measured.",
+          "is_final": false
+        },
+        {
+          "ts": 2.1,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "G2 early retrieval target threshold",
+          "supporting": [
+            "Doc_01 §5"
+          ],
+          "also_relevant": []
+        },
+        {
+          "id": "s2",
+          "text": "G3 multi-intent identification validation method",
+          "supporting": [
+            "Doc_01 §5"
+          ],
+          "also_relevant": []
+        }
+      ],
+      "expect_uncertainty": false
+    }
+  ]
+}

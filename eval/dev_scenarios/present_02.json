@@ -1,0 +1,66 @@
+{
+  "id": "present_02",
+  "category": "presentation_only",
+  "review_status": "draft_pending_human_review",
+  "description": "Reformat the previous answer as a numbered list.",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "What does the multi-intent",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "decomposer do?",
+          "is_final": false
+        },
+        {
+          "ts": 1.3,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "multi-intent decomposer role",
+          "supporting": [
+            "Doc_01 §2.1"
+          ],
+          "also_relevant": [
+            "Doc_01 §2"
+          ]
+        }
+      ],
+      "expect_uncertainty": false
+    },
+    {
+      "turn": 2,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "Put that as a",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "numbered list please.",
+          "is_final": false
+        },
+        {
+          "ts": 1.3,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": false,
+      "gold_sub_intents": [],
+      "expect_uncertainty": false,
+      "reuses_turn": 1
+    }
+  ]
+}

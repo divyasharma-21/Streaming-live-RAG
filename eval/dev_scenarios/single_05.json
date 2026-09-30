@@ -1,0 +1,41 @@
+{
+  "id": "single_05",
+  "category": "single_intent",
+  "review_status": "draft_pending_human_review",
+  "description": "Two facets of one deliverable; should stay one sub-query.",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "What should the system architecture brief",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "cover and how long can it be?",
+          "is_final": false
+        },
+        {
+          "ts": 1.3,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "architecture brief contents and page limit",
+          "supporting": [
+            "Doc_01 §8"
+          ],
+          "also_relevant": []
+        }
+      ],
+      "expect_uncertainty": false,
+      "note": "Two facets of one deliverable: counts as a single intent."
+    }
+  ]
+}

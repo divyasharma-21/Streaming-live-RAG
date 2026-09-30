@@ -1,0 +1,86 @@
+{
+  "id": "late_05",
+  "category": "late_constraint",
+  "review_status": "draft_pending_human_review",
+  "description": "Follow-up narrows the problem overview to late-arriving constraints.",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "What problem does",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "streaming live RAG address?",
+          "is_final": false
+        },
+        {
+          "ts": 1.3,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "problem overview",
+          "supporting": [
+            "Doc_01 §1"
+          ],
+          "also_relevant": [
+            "Doc_01 §0",
+            "Doc_01 §1.1"
+          ]
+        }
+      ],
+      "expect_uncertainty": false
+    },
+    {
+      "turn": 2,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "Actually, I mean the late-arriving constraints problem",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "specifically, and how the system should handle it.",
+          "is_final": false
+        },
+        {
+          "ts": 1.3,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s2",
+          "text": "late-arriving constraints problem",
+          "supporting": [
+            "Doc_01 §1"
+          ],
+          "also_relevant": []
+        },
+        {
+          "id": "s3",
+          "text": "expected handling of a late detail",
+          "supporting": [
+            "Doc_01 §4.2"
+          ],
+          "also_relevant": [
+            "Doc_01 §1.1",
+            "Doc_01 §2.1"
+          ]
+        }
+      ],
+      "expect_uncertainty": false
+    }
+  ]
+}

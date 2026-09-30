@@ -1,0 +1,13 @@
+{
+  "corpus_version": "1",
+  "documents": [
+    {
+      "doc_id": "Doc_01",
+      "file": "Doc_01.md",
+      "title": "Streaming Live RAG",
+      "source_file": "Theme_4_Guide_RAG.pdf",
+      "source_sha256": "319adef6b15661e62b133b4805b4399cee58ef3e11012c054051b6974fd829db",
+      "sha256": "bde25048074749c67c8209bb562b437957c10f8f5cd2ec55673eedade6fc84d9"
+    }
+  ]
+}

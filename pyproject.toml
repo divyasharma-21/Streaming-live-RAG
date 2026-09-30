@@ -1,0 +1,34 @@
+[project]
+name = "prism-live-rag"
+version = "0.1.0"
+description = "PRISM Streaming Live RAG engine (Phase 1: foundation and non-streaming baseline)"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+# Runtime dependencies are pinned. They are CPU-only and need no model downloads.
+dependencies = [
+    "pydantic==2.13.5",
+    "rank-bm25==0.2.2",
+    "numpy==2.4.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+    "pytest-asyncio==1.4.0",
+    "jsonschema==4.26.0",
+]
+# Heavier, model-based backends. NOT installed or tested in Phase 1.
+# They pull in PyTorch (~several hundred MB) and download model weights on first use.
+# The teammate who owns infrastructure must verify they fit the 4 GB RAM target.
+dense = [
+    "sentence-transformers>=3.0",
+    "faiss-cpu>=1.8",
+]
+rerank = [
+    "sentence-transformers>=3.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"

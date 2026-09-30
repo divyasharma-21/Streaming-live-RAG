@@ -1,0 +1,38 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "text": {
+      "title": "Text",
+      "type": "string"
+    },
+    "status": {
+      "default": "pending",
+      "enum": [
+        "pending",
+        "retrieved",
+        "merged",
+        "dropped"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "constraints": {
+      "description": "Shared context carried into this sub-query.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Constraints",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "text"
+  ],
+  "title": "SubQuery",
+  "type": "object"
+}

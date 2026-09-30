@@ -1,0 +1,45 @@
+{
+  "id": "noisy_01",
+  "category": "noisy_fragment",
+  "review_status": "draft_pending_human_review",
+  "description": "Disfluent single question.",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "um so the the",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "what's the uh threshold for",
+          "is_final": false
+        },
+        {
+          "ts": 1.6,
+          "text": "early retrieval again?",
+          "is_final": false
+        },
+        {
+          "ts": 2.1,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "G2 early retrieval threshold",
+          "supporting": [
+            "Doc_01 §5"
+          ],
+          "also_relevant": []
+        }
+      ],
+      "expect_uncertainty": false
+    }
+  ]
+}

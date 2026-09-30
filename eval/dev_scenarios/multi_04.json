@@ -1,0 +1,59 @@
+{
+  "id": "multi_04",
+  "category": "multi_intent",
+  "review_status": "draft_pending_human_review",
+  "description": "Late constraints and presentation-only handling asked together.",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "How should the system handle late-arriving constraints",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "and what does it do for",
+          "is_final": false
+        },
+        {
+          "ts": 1.6,
+          "text": "presentation-only requests?",
+          "is_final": false
+        },
+        {
+          "ts": 2.1,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "handling of late-arriving constraints",
+          "supporting": [
+            "Doc_01 §4.2"
+          ],
+          "also_relevant": [
+            "Doc_01 §1",
+            "Doc_01 §1.1",
+            "Doc_01 §2.1"
+          ]
+        },
+        {
+          "id": "s2",
+          "text": "handling of presentation-only requests",
+          "supporting": [
+            "Doc_01 §4.3"
+          ],
+          "also_relevant": [
+            "Doc_01 §6"
+          ]
+        }
+      ],
+      "expect_uncertainty": false
+    }
+  ]
+}

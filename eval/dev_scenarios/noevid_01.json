@@ -1,0 +1,38 @@
+{
+  "id": "noevid_01",
+  "category": "no_evidence",
+  "review_status": "draft_pending_human_review",
+  "description": "Hardware requirement not stated in the corpus.",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "What GPU is required",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "to run the system?",
+          "is_final": false
+        },
+        {
+          "ts": 1.3,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "required GPU",
+          "supporting": [],
+          "also_relevant": []
+        }
+      ],
+      "expect_uncertainty": true
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "chunk_id": {
+      "description": "Stable id: '<Doc_ID> §<Section>#<part>'.",
+      "title": "Chunk Id",
+      "type": "string"
+    },
+    "doc_id": {
+      "title": "Doc Id",
+      "type": "string"
+    },
+    "section": {
+      "description": "Section id without the § sign, e.g. '4.1.2'.",
+      "title": "Section",
+      "type": "string"
+    },
+    "text": {
+      "description": "Chunk text, prefixed with the document title and section heading.",
+      "title": "Text",
+      "type": "string"
+    },
+    "title": {
+      "default": "",
+      "title": "Title",
+      "type": "string"
+    },
+    "heading": {
+      "default": "",
+      "title": "Heading",
+      "type": "string"
+    },
+    "part": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Part",
+      "type": "integer"
+    },
+    "n_tokens": {
+      "default": 0,
+      "minimum": 0,
+      "title": "N Tokens",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "chunk_id",
+    "doc_id",
+    "section",
+    "text"
+  ],
+  "title": "CorpusChunk",
+  "type": "object"
+}

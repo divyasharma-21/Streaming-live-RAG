@@ -1,0 +1,48 @@
+{
+  "id": "multi_06",
+  "category": "multi_intent",
+  "review_status": "draft_pending_human_review",
+  "description": "A roadmap question and a rules question.",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "Which phase covers the answer delta engine,",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "and what does architectural parsimony mean?",
+          "is_final": false
+        },
+        {
+          "ts": 1.3,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "roadmap phase containing the answer delta engine",
+          "supporting": [
+            "Doc_01 §7"
+          ],
+          "also_relevant": []
+        },
+        {
+          "id": "s2",
+          "text": "architectural parsimony rule",
+          "supporting": [
+            "Doc_01 §3"
+          ],
+          "also_relevant": []
+        }
+      ],
+      "expect_uncertainty": false
+    }
+  ]
+}

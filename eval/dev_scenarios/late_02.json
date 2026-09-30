@@ -1,0 +1,80 @@
+{
+  "id": "late_02",
+  "category": "late_constraint",
+  "review_status": "draft_pending_human_review",
+  "description": "Follow-up focuses the rules summary on grounding and adds its threshold.",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "Summarize the hard",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "engineering rules.",
+          "is_final": false
+        },
+        {
+          "ts": 1.3,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "hard engineering rules",
+          "supporting": [
+            "Doc_01 §3"
+          ],
+          "also_relevant": []
+        }
+      ],
+      "expect_uncertainty": false
+    },
+    {
+      "turn": 2,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "Actually, focus on grounding,",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "and include the threshold it is evaluated against.",
+          "is_final": false
+        },
+        {
+          "ts": 1.3,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s2",
+          "text": "factual grounding rule",
+          "supporting": [
+            "Doc_01 §3"
+          ],
+          "also_relevant": []
+        },
+        {
+          "id": "s3",
+          "text": "G4 grounding threshold",
+          "supporting": [
+            "Doc_01 §5"
+          ],
+          "also_relevant": []
+        }
+      ],
+      "expect_uncertainty": false
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+# Optional model-based backends. NOT installed or tested in Phase 1.
+# Enable with PRISM_DENSE_BACKEND=sentence_transformers and/or PRISM_RERANK_BACKEND=cross_encoder.
+# These install PyTorch and download model weights on first use; verify RAM on the 4 GB target
+# and pin exact versions once they have been tested.
+sentence-transformers>=3.0
+faiss-cpu>=1.8

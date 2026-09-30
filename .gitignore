@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment / secrets
+.env
+
+# Generated artefacts
+indexes/
+logs/*.jsonl
+results/
+*.log
+
+# Source PDFs carry personal footer information; never commit them
+*.pdf
+
+# Model caches
+.cache/
+models/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

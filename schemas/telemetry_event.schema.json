@@ -1,0 +1,133 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "event": {
+      "enum": [
+        "request_started",
+        "controller_decision",
+        "utterance_end",
+        "decomposition",
+        "cache_hit",
+        "retrieval_started",
+        "retrieval_completed",
+        "rerank_completed",
+        "fusion_completed",
+        "llm_call",
+        "citation_check",
+        "answer_emitted",
+        "request_completed",
+        "error"
+      ],
+      "title": "Event",
+      "type": "string"
+    },
+    "request_id": {
+      "title": "Request Id",
+      "type": "string"
+    },
+    "session_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Session Id"
+    },
+    "wall_time": {
+      "description": "Unix epoch seconds.",
+      "title": "Wall Time",
+      "type": "number"
+    },
+    "elapsed_ms": {
+      "default": 0.0,
+      "description": "Milliseconds since request_started.",
+      "minimum": 0,
+      "title": "Elapsed Ms",
+      "type": "number"
+    },
+    "stage_latency_ms": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Stage Latency Ms"
+    },
+    "trigger": {
+      "anyOf": [
+        {
+          "enum": [
+            "provisional",
+            "multi_intent",
+            "final"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Trigger"
+    },
+    "tokens_in": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tokens In"
+    },
+    "tokens_out": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tokens Out"
+    },
+    "est_cost_usd": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Est Cost Usd"
+    },
+    "data": {
+      "additionalProperties": true,
+      "title": "Data",
+      "type": "object"
+    }
+  },
+  "required": [
+    "event",
+    "request_id"
+  ],
+  "title": "TelemetryEvent",
+  "type": "object"
+}

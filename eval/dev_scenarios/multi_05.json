@@ -1,0 +1,53 @@
+{
+  "id": "multi_05",
+  "category": "multi_intent",
+  "review_status": "draft_pending_human_review",
+  "description": "A deliverable and a gate about telemetry.",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "What does the telemetry schema deliverable",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "need to capture, and which gate",
+          "is_final": false
+        },
+        {
+          "ts": 1.6,
+          "text": "is about trace coverage?",
+          "is_final": false
+        },
+        {
+          "ts": 2.1,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "telemetry and observability schema deliverable",
+          "supporting": [
+            "Doc_01 §8"
+          ],
+          "also_relevant": []
+        },
+        {
+          "id": "s2",
+          "text": "G6 telemetry trace coverage gate",
+          "supporting": [
+            "Doc_01 §5"
+          ],
+          "also_relevant": []
+        }
+      ],
+      "expect_uncertainty": false
+    }
+  ]
+}

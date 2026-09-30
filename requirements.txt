@@ -1,0 +1,4 @@
+# Runtime dependencies (pinned). Mirrors [project].dependencies in pyproject.toml.
+pydantic==2.13.5
+rank-bm25==0.2.2
+numpy==2.4.6

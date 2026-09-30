@@ -1,0 +1,63 @@
+{
+  "id": "multi_03",
+  "category": "multi_intent",
+  "review_status": "draft_pending_human_review",
+  "description": "Three intents across three sections.",
+  "turns": [
+    {
+      "turn": 1,
+      "chunks": [
+        {
+          "ts": 0.0,
+          "text": "Tell me what the evidence fusion component does,",
+          "is_final": false
+        },
+        {
+          "ts": 0.8,
+          "text": "what the citation hallucination pitfall is,",
+          "is_final": false
+        },
+        {
+          "ts": 1.6,
+          "text": "and what the grounding gate threshold is.",
+          "is_final": false
+        },
+        {
+          "ts": 2.1,
+          "text": "",
+          "is_final": true
+        }
+      ],
+      "retrieval_required": true,
+      "gold_sub_intents": [
+        {
+          "id": "s1",
+          "text": "evidence fusion and reranking responsibilities",
+          "supporting": [
+            "Doc_01 §2.1"
+          ],
+          "also_relevant": [
+            "Doc_01 §2"
+          ]
+        },
+        {
+          "id": "s2",
+          "text": "citation hallucination pitfall",
+          "supporting": [
+            "Doc_01 §6"
+          ],
+          "also_relevant": []
+        },
+        {
+          "id": "s3",
+          "text": "G4 factual grounding threshold",
+          "supporting": [
+            "Doc_01 §5"
+          ],
+          "also_relevant": []
+        }
+      ],
+      "expect_uncertainty": false
+    }
+  ]
+}
